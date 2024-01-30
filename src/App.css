@@ -15,6 +15,9 @@ html {
 }
 
 body {
+  background-image: url('/public/assets/backgrounds/01d.png');
+  background-size: cover;
+  background-position: center;
   color: rgb(8, 23, 85);
   background-color: rgba(90, 74, 74, 0.973);
 }
@@ -43,7 +46,7 @@ ul {
 }
 
 .app {
-  /* background-image: url('/public/assets/backgrounds/01d.png'); */
+  background-image: url('/public/assets/backgrounds/01d.png');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
