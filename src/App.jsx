@@ -59,6 +59,9 @@ function App() {
         setHasError(true)
         console.log(err)
       })  
+      .finally(() => {
+        setIsLoading(false)
+      })
     }
   }, [textInput])
   
@@ -86,12 +89,15 @@ function App() {
           <img className="loading" src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-11-849_512.gif" alt="loading" />
         :
           textInput?
-            <WeatherCard
-              weather = {finder}
-              temp = {temp} 
-              setTextInput = {setTextInput}
-              hasError = {hasError}
-            />
+            isLoading?
+              <img className="loading" src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-11-849_512.gif" alt="loading" />
+            :
+              <WeatherCard
+                weather = {finder}
+                temp = {temp} 
+                setTextInput = {setTextInput}
+                hasError = {hasError}
+              />
           :
             <WeatherCard
               weather = {weather}
