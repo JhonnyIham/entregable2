@@ -74,11 +74,11 @@ function App() {
 
   if (finder) {
     bgStyle = {
-      backgroundImage: `url('../assets/backgrounds/${finder?.weather[0].icon}.png')`
+      backgroundImage: `url('../assets/backgrounds/${finder?.weather?.[0]?.icon || '01d'}.png')`
     }
   } else {
     bgStyle = {
-      backgroundImage: `url('../assets/backgrounds/${weather?.weather[0].icon}.png')`
+      backgroundImage: `url('../assets/backgrounds/${weather?.weather?.[0]?.icon || '01d'}.png')`
     }
   }
 
