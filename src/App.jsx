@@ -15,7 +15,6 @@ function App() {
   const [hasError, setHasError] = useState(false)
 
   const success = position => {
-    console.log(position)
     const obj = {
       lat: position.coords.latitude,
       lon: position.coords.longitude
@@ -27,7 +26,6 @@ function App() {
   useEffect(() => {
     if (coords) {
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${APIkey}`
-      console.log(url)
       axios.get(url)
       .then(res => {
         const obj ={
@@ -80,9 +78,6 @@ function App() {
       backgroundImage: `url('../assets/backgrounds/${weather?.weather[0].icon}.png')`
     }
   }
-
-
-  console.log(finder)
 
   return (
     <div className='app' style={bgStyle}>
